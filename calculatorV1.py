@@ -22,7 +22,7 @@ variable_size = default_text_size # this size will change depending on the lengt
 display_style = tkFont.Font(family="Roboto", size=variable_size) # set text fontstyle and size for the display text
 text_style = tkFont.Font(family="Roboto", size=28) # set text fontstyle and size for the buttons
 
-# - gui -
+# - GUI -
 
 frame1 = tk.Frame(highlightcolor="#ffffff")
 frame1.place(rely=0.28, relx=0.01, relwidth=1, relheight=1)
@@ -55,20 +55,20 @@ b12 = tk.Button(frame1, bg="#94B5FF", activebackground="#EFEFEF", width=3, heigh
 b12.grid(row=2, column=3)
 b13 = tk.Button(frame1, bg="#CBCBCB", activebackground="#FBFBFB", width=2, height=1, relief="sunken", text="C", font=text_style, command=lambda: clear_display())
 b13.grid(row=3, column=0, sticky="w")
-b013 = tk.Button(frame1, bg="#C79595", activebackground="#EFEFEF", width=1, height=1, relief="sunken", text="e", font=text_style, command=lambda: clear_digit())
-b013.grid(row=3, column=0, sticky="e")
-b14 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="0", font=text_style, command=lambda: button_click(0))
-b14.grid(row=3, column=1)
-b15 = tk.Button(frame1, bg="#CBCBCB", activebackground="#EFEFEF", width=2, height=1, relief="sunken", text="=", font=text_style, command=lambda: equals())
-b15.grid(row=3, column=2, sticky="w")
-b015 = tk.Button(frame1, bg="#969696", activebackground="#EFEFEF", width=1, height=1, relief="sunken", text="≈", font=text_style, command=lambda: round_to_int())
-b015.grid(row=3, column=2, sticky="e")
-b16 = tk.Button(frame1, bg="#94B5FF", activebackground="#EFEFEF", width=3, height=1, relief="sunken", text="+", font=text_style, command=lambda: button_click("+"))
-b16.grid(row=3, column=3)
+b14 = tk.Button(frame1, bg="#C79595", activebackground="#EFEFEF", width=1, height=1, relief="sunken", text="e", font=text_style, command=lambda: clear_digit())
+b14.grid(row=3, column=0, sticky="e")
+b15 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="0", font=text_style, command=lambda: button_click(0))
+b15.grid(row=3, column=1)
+b16 = tk.Button(frame1, bg="#CBCBCB", activebackground="#EFEFEF", width=2, height=1, relief="sunken", text="=", font=text_style, command=lambda: equals())
+b16.grid(row=3, column=2, sticky="w")
+b17 = tk.Button(frame1, bg="#969696", activebackground="#EFEFEF", width=1, height=1, relief="sunken", text="≈", font=text_style, command=lambda: round_to_int())
+b17.grid(row=3, column=2, sticky="e")
+b18 = tk.Button(frame1, bg="#94B5FF", activebackground="#EFEFEF", width=3, height=1, relief="sunken", text="+", font=text_style, command=lambda: button_click("+"))
+b18.grid(row=3, column=3)
 
 # - logic - 
 
-def button_click(x):
+def button_click(x): # checks what button is pressed and performs action according to that
     global operator
     if len(operator) > 20:
         return print("you have reached maximum limit of digits!")
@@ -124,7 +124,7 @@ def equals():
 
     adaptive_text_display()
 
-def round_to_int():
+def round_to_int(): # rounds the displaying number to nearest int
     global operator
     if float(operator):
         print(f"converting {operator} to type float so round() can be used...") 
@@ -140,7 +140,7 @@ def round_to_int():
 
 # - extra -
 
-def adaptive_text_display():
+def adaptive_text_display(): # small extra that makes font smaller when working with big numbers
     if len(operator) > 10:
         display_style.config(size=30)
         if len(operator) > 13:
