@@ -1,6 +1,6 @@
 # calculator
 
-Simple Calculator made with Python GUI (tkinter).
+Calculator with simple GUI made with Python tkinter.
 
 some hotkeys:
 
