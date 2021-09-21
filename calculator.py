@@ -11,6 +11,7 @@ root.geometry("310x412") # the height, and width of the program
 root.title("Calculator") # title of the program
 root.configure(bg="#e0e0e0") # background color of the "root" frame
 root.resizable(False, False) # makes the program not resizable (horizontally, vertically)
+root.iconbitmap("icon.ico")
     
 operator = "" # this is the actual numbers that are being operated
 str_var = tk.StringVar() # creates a new so-called "string Variable" which is basically a string that acts like a variable
