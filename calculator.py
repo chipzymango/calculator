@@ -24,6 +24,10 @@ class Start:
         self.str_var = tk.StringVar() # creates a new so-called "string Variable" which is basically a string that acts like a variable
         self.str_var.set(self.operator) # this is the value that will be shown as a string in the upper label
 
+        self.scale_button_str_value = "+"
+        self.scale_button_str_var = tk.StringVar()
+        self.scale_button_str_var.set(self.scale_button_str_value)
+
         self.default_text_size = 40
         self.variable_size = self.default_text_size # this size will change depending on the length of the value displayed in the calculator
 
@@ -39,7 +43,7 @@ class Start:
         frame2 = tk.Frame(highlightcolor="#ff0000")
         frame2.place(relx=0.015, rely=0.21, relwidth=0.9625, relheight=0.06)
 
-        scale_window_button = tk.Button(master, bg="#ccffcc", activebackground="#bbffbb", relief="sunken", bd=0, text="+", command=lambda: self.scale_window())
+        scale_window_button = tk.Button(master, bg="#ccffcc", activebackground="#bbffbb", relief="sunken", bd=0, textvariable=self.scale_button_str_var, command=lambda: self.scale_window())
         scale_window_button.place(relwidth=0.07, relheight=0.05, relx=0.902, rely=0.215)
 
         self.b1 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="1", font=self.text_style, command=lambda: self.button_click(1))
@@ -100,7 +104,7 @@ class Start:
     # logic
     def button_click(self, x): # checks what button is pressed and performs actions according to that
         
-        if len(self.operator) > 20:
+        if len(self.operator) > 19:
             return print("you have reached maximum limit of digits!")
 
         if len(self.operator) > 0:
@@ -182,10 +186,18 @@ class Start:
             self.window_size = "585x660"
             self.window_scale_value = 2
             self.default_text_size = 80
+
+            self.scale_button_str_value = "-"
+            self.scale_button_str_var.set(self.scale_button_str_value)
         else:
             self.window_size = "310x412"
             self.window_scale_value = 1
             self.default_text_size = 40
+
+            self.scale_button_str_value = "+"
+            self.scale_button_str_var.set(self.scale_button_str_value)
+
+        self.adaptive_text_display()
 
 
         # update window size with the new values
