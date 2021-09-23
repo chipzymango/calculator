@@ -16,8 +16,8 @@ class Start:
         master.iconbitmap("icon.ico")
         self.master = master
 
-        self.window_size = "1270x660"#"310x412"
-        self.window_scale_value = 3
+        self.window_size = "1310x360"#"310x412"
+        self.window_scale_value = 2
         self.master.geometry(self.window_size) # the height, and width of the program
             
         self.operator = "" # this is the actual numbers that are being operated
@@ -49,56 +49,73 @@ class Start:
         self.b1 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="1", font=self.text_style, command=lambda: self.button_click(1))
         self.b1.grid(row=0, column=0)
         master.bind("1", lambda e: self.button_click(1))
-        self.b2 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="2", font=self.text_style, command=lambda: self.button_click(2))
-        self.b2.grid(row=1, column=0)
+
+        self.b2 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="2", font=self.text_style, command=lambda: self.button_click(2))
+        self.b2.grid(row=0, column=1)
         master.bind("2", lambda e: self.button_click(2))
-        self.b3 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="3", font=self.text_style, command=lambda: self.button_click(3))
-        self.b3.grid(row=2, column=0)
+
+        self.b3 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="3", font=self.text_style, command=lambda: self.button_click(3))
+        self.b3.grid(row=0, column=2)
         master.bind("3", lambda e: self.button_click(3))
-        self.b4 = tk.Button(frame1, bg="#94b5FF", activebackground="#EFEFEF", width=3, height=1, relief="sunken", text="÷", font=self.text_style, command=lambda: self.button_click("/"))
-        self.b4.grid(row=3, column=0)
+
+        self.b4 = tk.Button(frame1, bg="#94b5FF", activebackground="#EFEFEF", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="÷", font=self.text_style, command=lambda: self.button_click("/"))
+        self.b4.grid(row=1, column=6)
         master.bind("d", lambda e: self.button_click("/"))
-        self.b5 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="4", font=self.text_style, command=lambda: self.button_click(4))
-        self.b5.grid(row=4, column=0)
+
+        self.b5 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="4", font=self.text_style, command=lambda: self.button_click(4))
+        self.b5.grid(row=0, column=3)
         master.bind("4", lambda e: self.button_click(4))
-        self.b6 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="5", font=self.text_style, command=lambda: self.button_click(5))
-        self.b6.grid(row=0, column=1)
+
+        self.b6 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="5", font=self.text_style, command=lambda: self.button_click(5))
+        self.b6.grid(row=0, column=4)
         master.bind("5", lambda e: self.button_click(5))
-        self.b7 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken",  text="6", font=self.text_style, command=lambda: self.button_click(6))
-        self.b7.grid(row=1, column=1)
+
+        self.b7 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken",  text="6", font=self.text_style, command=lambda: self.button_click(6))
+        self.b7.grid(row=1, column=0)
         master.bind("6", lambda e: self.button_click(6))
-        self.b8 = tk.Button(frame1, bg="#94b5FF", activebackground="#EFEFEF", width=3, height=1, relief="sunken", text="x", font=self.text_style, command=lambda: self.button_click("*"))
-        self.b8.grid(row=2, column=1)
+
+        self.b8 = tk.Button(frame1, bg="#94b5FF", activebackground="#EFEFEF", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="x", font=self.text_style, command=lambda: self.button_click("*"))
+        self.b8.grid(row=0, column=6)
         master.bind("m", lambda e: self.button_click("*"))
-        self.b9 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="7", font=self.text_style, command=lambda: self.button_click(7))
-        self.b9.grid(row=3, column=1)
+
+        self.b9 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="7", font=self.text_style, command=lambda: self.button_click(7))
+        self.b9.grid(row=1, column=1)
         master.bind("7", lambda e: self.button_click(7))
-        self.b10 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="8", font=self.text_style, command=lambda: self.button_click(8))
-        self.b10.grid(row=4, column=1)
+
+        self.b10 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="8", font=self.text_style, command=lambda: self.button_click(8))
+        self.b10.grid(row=1, column=2)
         master.bind("8", lambda e: self.button_click(8))
-        self.b11 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="9", font=self.text_style, command=lambda: self.button_click(9))
-        self.b11.grid(row=0, column=2)
+
+        self.b11 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="9", font=self.text_style, command=lambda: self.button_click(9))
+        self.b11.grid(row=1, column=3)
         master.bind("9", lambda e: self.button_click(9))
-        self.b12 = tk.Button(frame1, bg="#94b5FF", activebackground="#EFEFEF", width=3, height=1, relief="sunken", text="-", font=self.text_style, command=lambda: self.button_click("-"))
-        self.b12.grid(row=2, column=3)
+
+        self.b12 = tk.Button(frame1, bg="#94b5FF", activebackground="#EFEFEF", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="-", font=self.text_style, command=lambda: self.button_click("-"))
+        self.b12.grid(row=1, column=5)
         master.bind("-", lambda e: self.button_click("-"))
-        self.b13 = tk.Button(frame1, bg="#CBCBCB", activebackground="#FBFBFB", width=2, height=1, relief="sunken", text="C", font=self.text_style, command=lambda: self.clear_display())
-        self.b13.grid(row=3, column=0, sticky="w")
+
+        self.b13 = tk.Button(frame1, bg="#CBCBCB", activebackground="#FBFBFB", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="C", font=self.text_style, command=lambda: self.clear_display())
+        self.b13.grid(row=0, column=8)
         master.bind("c", lambda e: self.clear_display())
-        self.b14 = tk.Button(frame1, bg="#C79595", activebackground="#EFEFEF", width=1, height=1, relief="sunken", text="e", font=self.text_style, command=lambda: self.clear_digit())
-        self.b14.grid(row=3, column=0, sticky="e")
+
+        self.b14 = tk.Button(frame1, bg="#C79595", activebackground="#EFEFEF", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="e", font=self.text_style, command=lambda: self.clear_digit())
+        self.b14.grid(row=0, column=7)
         master.bind("<BackSpace>", lambda e: self.clear_digit())
-        self.b15 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3, height=1, relief="sunken", text="0", font=self.text_style, command=lambda: self.button_click(0))
-        self.b15.grid(row=3, column=1)
+
+        self.b15 = tk.Button(frame1, bg="#EFEFEF", activebackground="#FFE9A4", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="0", font=self.text_style, command=lambda: self.button_click(0))
+        self.b15.grid(row=1, column=4)
         master.bind("0", lambda e: self.button_click(0))
-        self.b16 = tk.Button(frame1, bg="#CBCBCB", activebackground="#EFEFEF", width=2, height=1, relief="sunken", text="=", font=self.text_style, command=lambda: self.equals())
-        self.b16.grid(row=3, column=2, sticky="w")
+
+        self.b16 = tk.Button(frame1, bg="#CBCBCB", activebackground="#EFEFEF", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="=", font=self.text_style, command=lambda: self.equals())
+        self.b16.grid(row=1, column=7)
         master.bind("<Return>", lambda e: self.equals())
-        self.b17 = tk.Button(frame1, bg="#969696", activebackground="#EFEFEF", width=1, height=1, relief="sunken", text="≈", font=self.text_style, command=lambda: self.round_to_int())
-        self.b17.grid(row=3, column=2, sticky="e")
+
+        self.b17 = tk.Button(frame1, bg="#969696", activebackground="#EFEFEF", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="≈", font=self.text_style, command=lambda: self.round_to_int())
+        self.b17.grid(row=1, column=8)
         master.bind("r", lambda e: self.round_to_int())
-        self.b18 = tk.Button(frame1, bg="#94b5FF", activebackground="#EFEFEF", width=3, height=1, relief="sunken", text="+", font=self.text_style, command=lambda: self.button_click("+"))
-        self.b18.grid(row=3, column=3)
+
+        self.b18 = tk.Button(frame1, bg="#94b5FF", activebackground="#EFEFEF", width=3*self.window_scale_value, height=1*self.window_scale_value, relief="sunken", text="+", font=self.text_style, command=lambda: self.button_click("+"))
+        self.b18.grid(row=0, column=5)
         master.bind("+", lambda e: self.button_click("+"))
 
     # logic
